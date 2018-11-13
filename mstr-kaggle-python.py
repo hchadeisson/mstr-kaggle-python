@@ -27,4 +27,6 @@ for dirname, dirnames, filenames in os.walk('../input'):
         table_name = dataset_name
         newDatasetId, newTableId = mstr_conn.create_dataset(data_frame=pd.read_csv(os.path.join(dirname, filename)), dataset_name=dataset_name, table_name=table_name)
     print('3. End of Dataset')
-print('4. All datasets sent, end of script')
+print('4. All datasets sent')
+mstr_conn.close()
+print('5. Disconnected from server. End of script')
