@@ -23,7 +23,8 @@ for dirname, dirnames, filenames in os.walk('../input'):
     print('3. Dataset: '+dirname)
     for filename in filenames:
         print('  Filename: '+os.path.join(dirname, filename))
-        dataset_name = filename.replace('.csv', '')
+        dataset_name = filename.replace('.csv', '') #your login goes here
+        print('  Target Cube Name: '+dataset_name)
         table_name = dataset_name
         newDatasetId, newTableId = mstr_conn.create_dataset(data_frame=pd.read_csv(os.path.join(dirname, filename)), dataset_name=dataset_name, table_name=table_name)
     print('3. End of Dataset')
